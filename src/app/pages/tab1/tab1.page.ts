@@ -16,7 +16,7 @@ export class Tab1Page {
   }
 
   async agregarPersona(){
-    //this.router.navigateByUrl('/tabs/tab1/agregar');
+    
     const alert = await this.alertController.create({
       header: 'Nueva Persona',
       message: 'Aqui puedes agregar una nueva persona a la lista',
@@ -31,7 +31,15 @@ export class Tab1Page {
         role: 'cancel'
       },{
         text: 'Crear',
-        handler: (data) =>{this.listDebtService.crearPersona(data.persona)}
+        handler: (data) =>{
+          if(data.persona.length === 0){
+            return ;
+          }
+          const idPersona = this.listDebtService.crearPersona(data.persona);
+          console.log(data.persona)
+          this.router.navigateByUrl(`/tabs/tab1/agregar/${ idPersona }`);
+        }
+
       }]
     });
 

@@ -5,15 +5,19 @@
           
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Agregar Persona</ion-title>
+    <ion-title>Agregar Deudas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position="floating">Deuda</ion-label>
+      <ion-input type="text" [(ngModel)]="nombreDeuda"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input type="text" [(ngModel)]="valorDeuda" ></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>

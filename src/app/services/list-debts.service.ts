@@ -22,6 +22,14 @@ export class ListDebtsService {
 
     this.guardarEnStorage();
 
+    return nuevaPersona.id;  
+
+  }
+
+  getListaPersonas(id: string|number){
+    id = Number(id);
+    
+    return this.personas.find( listaData => listaData.id === id);
   }
 
   guardarEnStorage(){
